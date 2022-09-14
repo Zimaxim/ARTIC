@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
 
     buildFeatures {
@@ -36,6 +38,41 @@ android {
 }
 
 dependencies {
+
+    def nav_version = "2.5.0"
+    def room_version = ""
+
+    //Moshi
+    implementation("com.squareup.moshi:moshi:1.11.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.11.0")
+
+    //NavComponent
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    //Ktor
+    implementation "io.ktor:ktor-client-core:1.6.7"
+    implementation "io.ktor:ktor-client-android:1.6.7"
+    implementation "io.ktor:ktor-client-gson:1.6.7"
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    //Koin
+    implementation "io.insert-koin:koin-android:3.1.5"
+    implementation "io.insert-koin:koin-android-ext:3.0.2"
+    implementation "io.insert-koin:koin-core:3.1.5"
+    implementation "io.insert-koin:koin-android-compat:3.1.5"
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
