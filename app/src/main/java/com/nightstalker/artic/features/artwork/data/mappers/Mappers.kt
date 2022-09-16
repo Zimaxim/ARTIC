@@ -1,6 +1,6 @@
 package com.nightstalker.artic.features.artwork.data.mappers
 
-import com.nightstalker.artic.core.data.model.ArtworkDefaultModel
+import com.nightstalker.artic.core.data.model.artwork.ArtworkDefaultModel
 import com.nightstalker.artic.core.domain.model.ArtworkDefault
 
 /**

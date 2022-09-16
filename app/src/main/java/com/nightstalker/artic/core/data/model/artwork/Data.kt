@@ -1,7 +1,8 @@
-package com.nightstalker.artic.core.data.model
+package com.nightstalker.artic.core.data.model.artwork
 
 
 import com.google.gson.annotations.SerializedName
+import com.nightstalker.artic.core.data.model.common.SuggestAutocompleteAll
 
 data class Data(
     @SerializedName("alt_artist_ids")

@@ -1,7 +1,9 @@
-package com.nightstalker.artic.core.data.model
+package com.nightstalker.artic.core.data.model.artwork
 
 
 import com.google.gson.annotations.SerializedName
+import com.nightstalker.artic.core.data.model.common.Config
+import com.nightstalker.artic.core.data.model.common.Info
 
 /**
  * Класс произведения искусства

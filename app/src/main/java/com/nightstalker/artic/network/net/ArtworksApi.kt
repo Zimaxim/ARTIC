@@ -1,6 +1,6 @@
 package com.nightstalker.artic.network.net
 
-import com.nightstalker.artic.core.data.model.ArtworkDefaultModel
+import com.nightstalker.artic.core.data.model.artwork.ArtworkDefaultModel
 import com.nightstalker.artic.network.ApiConstants.ID
 import retrofit2.http.GET
 import retrofit2.http.Path
