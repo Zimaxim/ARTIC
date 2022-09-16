@@ -2,6 +2,7 @@ package com.nightstalker.artic.features.di
 
 import com.nightstalker.artic.network.ApiConstants.BASE_URL
 import com.nightstalker.artic.network.net.ArtworksApi
+import com.nightstalker.artic.network.net.ExhibitionsApi
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -24,5 +25,6 @@ val networkModule = module {
     val retrofit: Retrofit = builder.build()
 
     factory { retrofit.create(ArtworksApi::class.java) }
+    factory { retrofit.create(ExhibitionsApi::class.java) }
 
 }

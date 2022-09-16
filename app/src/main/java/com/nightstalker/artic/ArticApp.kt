@@ -1,9 +1,11 @@
 package com.nightstalker.artic
 
 import android.app.Application
+import com.nightstalker.artic.features.artwork.di.artworkModules
 import com.nightstalker.artic.features.di.dataModule
 import com.nightstalker.artic.features.di.networkModule
 import com.nightstalker.artic.features.di.presentationModule
+import com.nightstalker.artic.features.exhibition.di.exhibitionModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -13,7 +15,9 @@ class ArticApp: Application() {
 
         startKoin {
             androidContext(this@ArticApp)
-            modules(dataModule, networkModule, presentationModule)
+            modules(artworkModules)
+            modules(exhibitionModules)
+            modules(networkModule)
         }
     }
 }
