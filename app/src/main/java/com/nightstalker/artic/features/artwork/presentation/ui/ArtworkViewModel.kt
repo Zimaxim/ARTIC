@@ -3,6 +3,7 @@ package com.nightstalker.artic.features.artwork.presentation.ui
 import androidx.lifecycle.*
 import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.artwork.domain.repo.ArtWorkRepo
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 /**
@@ -27,7 +28,7 @@ class ArtworkViewModel(
     }
 
     fun getArtworks() {
-        viewModelScope.launch {
+        viewModelScope.launch() {
             _artworksLoaded.postValue(repo.getArtworks())
         }
     }

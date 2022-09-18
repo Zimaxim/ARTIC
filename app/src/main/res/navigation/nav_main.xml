@@ -9,5 +9,19 @@
         android:id="@+id/artworksListFragment"
         android:name="com.nightstalker.artic.features.artwork.presentation.ui.list.ArtworksListFragment"
         android:label="fragment_artworks_list"
-        tools:layout="@layout/fragment_artworks_list" />
+        tools:layout="@layout/fragment_artworks_list" >
+        <action
+            android:id="@+id/toArtworkDetailsFragment"
+            app:destination="@id/artworkDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artworkDetailsFragment"
+        android:name="com.nightstalker.artic.features.artwork.presentation.ui.detail.ArtworkDetailsFragment"
+        android:label="fragment_artwork_details"
+        tools:layout="@layout/fragment_artwork_details" >
+        <argument
+            android:name="poster_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 </navigation>

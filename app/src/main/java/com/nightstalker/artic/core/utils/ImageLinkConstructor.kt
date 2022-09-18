@@ -9,6 +9,6 @@ package com.nightstalker.artic.core.utils
  */
 object ImageLinkConstructor {
     fun createImageDefaultLink(imageId: String): String {
-        return "https://www.artic.edu/iiif/2/$imageId/full/843,/0/default.jpg"
+        return "https://www.artic.edu/iiif/2/$imageId/full/200,/0/default.jpg"
     }
 }
