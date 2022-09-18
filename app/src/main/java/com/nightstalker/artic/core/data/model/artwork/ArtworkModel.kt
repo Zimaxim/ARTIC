@@ -13,7 +13,7 @@ import com.nightstalker.artic.core.data.model.common.Info
  * @property info
  * @constructor Create empty Artwork default model
  */
-data class ArtworkDefaultModel(
+data class ArtworkModel(
     @SerializedName("config")
     val config: Config,
     @SerializedName("data")

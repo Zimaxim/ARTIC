@@ -1,4 +1,4 @@
-package com.nightstalker.artic.core.domain.model
+package com.nightstalker.artic.features.artwork.domain
 
 /**
  * Класс произведения искусства
@@ -8,7 +8,7 @@ package com.nightstalker.artic.core.domain.model
  * @property imageId    ид картинки
  * @author Tamerlan Mamukhov
  */
-data class ArtworkDefault(
+data class Artwork(
     val id: Int,
     val title: String,
     val imageId: String

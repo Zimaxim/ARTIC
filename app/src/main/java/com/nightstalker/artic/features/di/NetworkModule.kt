@@ -9,6 +9,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * Сетевой модуль Koin
+ *
+ * @author Tamerlan Mamukhov on 2022-09-13
+ */
 val networkModule = module {
 
     val builder = Retrofit.Builder()

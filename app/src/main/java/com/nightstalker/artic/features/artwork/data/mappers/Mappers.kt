@@ -1,8 +1,8 @@
 package com.nightstalker.artic.features.artwork.data.mappers
 
-import com.nightstalker.artic.core.data.model.artwork.ArtworkDefaultModel
+import com.nightstalker.artic.core.data.model.artwork.ArtworkModel
 import com.nightstalker.artic.core.data.model.exhibition.ExhibitionModel
-import com.nightstalker.artic.core.domain.model.ArtworkDefault
+import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.exhibition.domain.Exhibition
 
 /**
@@ -11,8 +11,8 @@ import com.nightstalker.artic.features.exhibition.domain.Exhibition
  * @author Tamerlan Mamukhov
  */
 
-fun ArtworkDefaultModel.toDomain(): ArtworkDefault =
-    ArtworkDefault(id = data.id, title = data.title, imageId = data.imageId)
+fun ArtworkModel.toDomain(): Artwork =
+    Artwork(id = data.id, title = data.title, imageId = data.imageId)
 
 fun ExhibitionModel.toDomain(): Exhibition =
     Exhibition(
@@ -21,5 +21,6 @@ fun ExhibitionModel.toDomain(): Exhibition =
         title = data.title,
         altImageIds = listOf(),
         status = data.status,
-        shortDescription = data.shortDescription.toString()
+//        shortDescription = data.shortDescription.toString()
+        shortDescription = ""
     )

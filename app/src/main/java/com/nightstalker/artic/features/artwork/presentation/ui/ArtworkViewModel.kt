@@ -1,15 +1,21 @@
 package com.nightstalker.artic.features.artwork.presentation.ui
 
 import androidx.lifecycle.*
-import com.nightstalker.artic.core.domain.model.ArtworkDefault
+import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.artwork.domain.repo.ArtWorkRepo
 import kotlinx.coroutines.launch
 
+/**
+ * Вью модель для получения экспонатов
+ *
+ * @property repo   репозиторий
+ * @author Tamerlan Mamukhov on 2022-09-18
+ */
 class ArtworkViewModel(
     private val repo: ArtWorkRepo
 ) : ViewModel() {
-    private var _artworkLoaded = MutableLiveData<ArtworkDefault>()
-    val artworkLoaded: LiveData<ArtworkDefault> get() = _artworkLoaded
+    private var _artworkLoaded = MutableLiveData<Artwork>()
+    val artworkLoaded: LiveData<Artwork> get() = _artworkLoaded
 
     fun getArtwork(id: Int) {
         viewModelScope.launch {
