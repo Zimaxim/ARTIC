@@ -13,4 +13,7 @@ import retrofit2.http.Path
 interface ArtworksApi {
     @GET("artworks/{$ID}/")
     suspend fun getArtworkById(@Path(ID) id: Int): ArtworkModel
+
+    @GET("artworks?limit=10")
+    suspend fun getArtworks(): List<ArtworkModel>
 }

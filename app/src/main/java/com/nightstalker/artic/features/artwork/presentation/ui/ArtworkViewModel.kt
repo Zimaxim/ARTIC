@@ -17,9 +17,18 @@ class ArtworkViewModel(
     private var _artworkLoaded = MutableLiveData<Artwork>()
     val artworkLoaded: LiveData<Artwork> get() = _artworkLoaded
 
+    private var _artworksLoaded = MutableLiveData<List<Artwork>>()
+    val artworksLoaded: LiveData<List<Artwork>> get() = _artworksLoaded
+
     fun getArtwork(id: Int) {
         viewModelScope.launch {
             _artworkLoaded.postValue(repo.getArtworkById(id))
+        }
+    }
+
+    fun getArtworks() {
+        viewModelScope.launch {
+            _artworksLoaded.postValue(repo.getArtworks())
         }
     }
 }
