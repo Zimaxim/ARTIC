@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/artworksListFragment">
+
+    <fragment
+        android:id="@+id/artworksListFragment"
+        android:name="com.nightstalker.artic.features.artwork.presentation.ui.list.ArtworksListFragment"
+        android:label="fragment_artworks_list"
+        tools:layout="@layout/fragment_artworks_list" >
+        <action
+            android:id="@+id/toArtworkDetailsFragment"
+            app:destination="@id/artworkDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artworkDetailsFragment"
+        android:name="com.nightstalker.artic.features.artwork.presentation.ui.detail.ArtworkDetailsFragment"
+        android:label="fragment_artwork_details"
+        tools:layout="@layout/fragment_artwork_details" >
+        <argument
+            android:name="poster_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

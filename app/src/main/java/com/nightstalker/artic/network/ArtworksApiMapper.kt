@@ -7,4 +7,7 @@ import com.nightstalker.artic.network.net.ArtworksApi
 
 class ArtworksApiMapper(private val api: ArtworksApi) : BaseApiMapper() {
     suspend fun getArtWorkById(id: Int): Artwork = api.getArtworkById(id).toDomain()
+
+    suspend fun getArtworks(): List<Artwork> = api.getArtworks().data.toDomain()
+//    map { it.toDomain() }
 }

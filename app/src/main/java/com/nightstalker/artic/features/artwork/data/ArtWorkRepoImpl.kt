@@ -9,4 +9,6 @@ class ArtWorkRepoImpl(
 ) : ArtWorkRepo {
     override suspend fun getArtworkById(id: Int): Artwork =
         apiMapper.getArtWorkById(id)
+
+    override suspend fun getArtworks(): List<Artwork> = apiMapper.getArtworks()
 }

@@ -1,6 +1,7 @@
 package com.nightstalker.artic.features.artwork.data.mappers
 
 import com.nightstalker.artic.core.data.model.artwork.ArtworkModel
+import com.nightstalker.artic.core.data.model.artwork.Data
 import com.nightstalker.artic.core.data.model.exhibition.ExhibitionModel
 import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.exhibition.domain.Exhibition
@@ -13,6 +14,9 @@ import com.nightstalker.artic.features.exhibition.domain.Exhibition
 
 fun ArtworkModel.toDomain(): Artwork =
     Artwork(id = data.id, title = data.title, imageId = data.imageId)
+
+fun List<Data>.toDomain(): List<Artwork> =
+    map { Artwork(id = it.id, title = it.title, imageId = it.imageId) }
 
 fun ExhibitionModel.toDomain(): Exhibition =
     Exhibition(
