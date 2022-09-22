@@ -1,4 +1,4 @@
-package com.nightstalker.artic.features.artwork.presentation.ui.list
+package com.nightstalker.artic.features.exhibition.presentation.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,23 +7,25 @@ import com.bumptech.glide.Glide
 import com.nightstalker.artic.R
 import com.nightstalker.artic.core.utils.ImageLinkCreator
 import com.nightstalker.artic.databinding.ItemArtworkBinding
+import com.nightstalker.artic.databinding.ItemExhibitionBinding
 import com.nightstalker.artic.features.artwork.domain.Artwork
+import com.nightstalker.artic.features.exhibition.domain.Exhibition
 
 /**
  * @author Tamerlan Mamukhov
  * @created 2022-09-18
  */
-class ArtworksListAdapter(
+class ExhibitionsListAdapter(
     private val onItemClicked: (id: Int) -> Unit
-) : RecyclerView.Adapter<ArtworksListAdapter.ViewHolder>() {
-    private var _data: List<Artwork> = mutableListOf()
+) : RecyclerView.Adapter<ExhibitionsListAdapter.ViewHolder>() {
+    private var _data: List<Exhibition> = mutableListOf()
     val data get() = _data
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
-            ItemArtworkBinding.bind(
+            ItemExhibitionBinding.bind(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_artwork, parent, false)
+                    .inflate(R.layout.item_exhibition, parent, false)
             )
         )
 
@@ -33,7 +35,7 @@ class ArtworksListAdapter(
         with(holder.binding) {
             textTitle.text = item.title
 
-            val imageUrl = item.imageId?.let { ImageLinkCreator.createImageDefaultLink(it) }
+            val imageUrl = item.imageUrl
             Glide.with(context).load(imageUrl).into(placeImage)
 
             root.setOnClickListener {
@@ -44,19 +46,13 @@ class ArtworksListAdapter(
 
     override fun getItemCount(): Int = _data.size
 
-    fun setData(data: List<Artwork>) {
+    fun setData(data: List<Exhibition>) {
         if (data.isNotEmpty()) {
             this._data = data
             notifyDataSetChanged()
         }
     }
 
-    class ViewHolder(val binding: ItemArtworkBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-//        fun bind(item: Artwork) {
-//            with(binding) {
-//                textTitle.text = item.title
-//            }
-//        }
-    }
+    class ViewHolder(val binding: ItemExhibitionBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }

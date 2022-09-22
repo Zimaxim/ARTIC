@@ -10,6 +10,7 @@ package com.nightstalker.artic.features.artwork.domain
  */
 data class Artwork(
     val id: Int,
-    val title: String,
-    val imageId: String
+    val title: String?,
+    val imageId: String?,
+    val artist: String?,
 )

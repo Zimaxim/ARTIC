@@ -9,7 +9,7 @@ data class AgentModel(
     @SerializedName("config")
     val config: Config,
     @SerializedName("data")
-    val `data`: Data,
+    val `data`: AgentData,
     @SerializedName("info")
     val info: Info
 )
