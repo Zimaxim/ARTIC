@@ -1,10 +1,10 @@
-package com.nightstalker.artic.core.data.model.exhibition
+package com.nightstalker.artic.core.data.model.exhibition.detail
 
 
 import com.google.gson.annotations.SerializedName
 import com.nightstalker.artic.core.data.model.common.SuggestAutocompleteAll
 
-data class Data(
+data class ExhibitionData(
     @SerializedName("aic_end_at")
     val aicEndAt: String,
     @SerializedName("aic_start_at")
@@ -36,7 +36,7 @@ data class Data(
     @SerializedName("is_featured")
     val isFeatured: Boolean,
     @SerializedName("short_description")
-    val shortDescription: Any,
+    val shortDescription: String,
     @SerializedName("site_ids")
     val siteIds: List<Any>,
     @SerializedName("source_updated_at")

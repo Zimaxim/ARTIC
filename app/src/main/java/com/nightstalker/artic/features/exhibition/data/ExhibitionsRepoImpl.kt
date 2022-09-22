@@ -13,4 +13,7 @@ class ExhibitionsRepoImpl(
 ) : ExhibitionsRepo {
     override suspend fun getExhibitionById(id: Int): Exhibition =
         apiMapper.getExhibitionById(id)
+
+    override suspend fun getExhibitions(): List<Exhibition> =
+        apiMapper.getExhibitions()
 }

@@ -1,9 +1,9 @@
-package com.nightstalker.artic.core.data.model.artwork
+package com.nightstalker.artic.core.data.model.artwork.detail
 
 import com.google.gson.annotations.SerializedName
 import com.nightstalker.artic.core.data.model.common.SuggestAutocompleteAll
 
-data class Data(
+data class ArtworkData(
     @SerializedName("alt_artist_ids")
     val altArtistIds: List<Any>,
     @SerializedName("alt_classification_ids")

@@ -1,4 +1,4 @@
-package com.nightstalker.artic.core.data.model.artwork.list_res
+package com.nightstalker.artic.core.data.model.artwork.detail
 
 
 import com.google.gson.annotations.SerializedName
