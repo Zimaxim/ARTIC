@@ -1,4 +1,4 @@
-package com.nightstalker.artic.core.data.model.artwork
+package com.nightstalker.artic.core.data.model.artwork.detail
 
 
 import com.google.gson.annotations.SerializedName
@@ -17,7 +17,7 @@ data class ArtworkModel(
     @SerializedName("config")
     val config: Config,
     @SerializedName("data")
-    val data: Data,
+    val data: ArtworkData,
     @SerializedName("info")
     val info: Info
 )
