@@ -1,4 +1,4 @@
-package com.nightstalker.artic.features.artwork.data.mappers
+package com.nightstalker.artic.features
 
 import com.nightstalker.artic.core.data.model.artwork.detail.ArtworkModel
 import com.nightstalker.artic.core.data.model.artwork.detail.ArtworkData
@@ -14,7 +14,6 @@ import com.nightstalker.artic.features.exhibition.domain.Exhibition
  *
  * @author Tamerlan Mamukhov
  */
-
 fun ArtworkModel.toArtwork(): Artwork =
     Artwork(id = data.id, title = data.title, imageId = data.imageId, artist = data.artistDisplay)
 

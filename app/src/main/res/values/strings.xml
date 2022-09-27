@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ARTIC</string>
+    <string name="label_frag_art_list">Экспонаты</string>
+    <string name="label_frag_art_det">Экспонат</string>
+    <string name="label_frag_exi_list">Выставки</string>
+    <string name="label_frag_exi_det">Выставка</string>
 </resources>
