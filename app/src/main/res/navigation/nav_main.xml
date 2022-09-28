@@ -5,10 +5,11 @@
     android:id="@+id/nav_main"
     app:startDestination="@id/artworksListFragment">
 
+
     <fragment
         android:id="@+id/artworksListFragment"
         android:name="com.nightstalker.artic.features.artwork.presentation.ui.list.ArtworksListFragment"
-        android:label="fragment_artworks_list"
+        android:label="@string/label_frag_art_list"
         tools:layout="@layout/fragment_artworks_list" >
         <action
             android:id="@+id/toArtworkDetailsFragment"
@@ -17,7 +18,7 @@
     <fragment
         android:id="@+id/artworkDetailsFragment"
         android:name="com.nightstalker.artic.features.artwork.presentation.ui.detail.ArtworkDetailsFragment"
-        android:label="fragment_artwork_details"
+        android:label="@string/label_frag_art_det"
         tools:layout="@layout/fragment_artwork_details" >
         <argument
             android:name="poster_id"
@@ -25,9 +26,37 @@
             android:defaultValue="-1" />
     </fragment>
     <fragment
+        android:id="@+id/qrScanner"
+        android:name="com.nightstalker.artic.features.qrcode.QRScannerFragment"
+        android:label="Scanner"
+        tools:layout="@layout/fragment_qrscanner" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ticketsListFragment"
+        android:name="com.nightstalker.artic.features.ticket.presentation.ui.list.TicketsListFragment"
+        android:label="@string/label_frag_ticket_list"
+        tools:layout="@layout/fragment_tickets_list" >
+        <action
+            android:id="@+id/toTicketDetailsFragment"
+            app:destination="@id/ticketDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketDetailsFragment"
+        android:name="com.nightstalker.artic.features.ticket.presentation.ui.detail.TicketDetailsFragment"
+        android:label="@string/label_frag_ticket_det"
+        tools:layout="@layout/fragment_ticket_details" >
+        <argument
+            android:name="exhibitionId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
         android:id="@+id/exhibitionsListFragment"
         android:name="com.nightstalker.artic.features.exhibition.presentation.ui.list.ExhibitionsListFragment"
-        android:label="fragment_exhibitions_list"
+        android:label="@string/label_frag_exi_list"
         tools:layout="@layout/fragment_exhibitions_list" >
         <action
             android:id="@+id/toExhibitionDetailsFragment"
@@ -36,11 +65,16 @@
     <fragment
         android:id="@+id/exhibitionDetailsFragment"
         android:name="com.nightstalker.artic.features.exhibition.presentation.ui.detail.ExhibitionDetailsFragment"
-        android:label="fragment_exhibition_details"
+        android:label="@string/label_frag_exi_det"
         tools:layout="@layout/fragment_exhibition_details" >
         <argument
             android:name="exhibition_id"
             app:argType="integer"
             android:defaultValue="-1" />
+        <action
+            android:id="@+id/toTicketDetailsFragment"
+            app:destination="@id/ticketDetailsFragment" />
     </fragment>
+
+
 </navigation>

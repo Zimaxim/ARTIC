@@ -31,13 +31,11 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/titleTextView"
+        style="@style/DetailOfListItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/black"
-        android:textSize="32dp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivImage"
@@ -46,37 +44,37 @@
 
     <TextView
         android:id="@+id/tvAuthor"
+        style="@style/DetailOfListItemDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-
-        android:textColor="@color/black"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
         tools:text="Tanaka Atsuko" />
 
     <TextView
         android:id="@+id/tvDateAndPlace"
+        style="@style/DetailOfListItemDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginTop="8dp"
-        android:textColor="@color/black"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAuthor"
         tools:text="1964" />
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:id="@+id/tvDescription"
-        app:layout_constraintTop_toBottomOf="@id/tvDateAndPlace"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/DetailOfListItemDescription"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDateAndPlace" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

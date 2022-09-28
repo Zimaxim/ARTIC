@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ARTIC</string>
+    <string name="label_frag_art_list">Экспонаты</string>
+    <string name="label_frag_art_det">Экспонат</string>
+    <string name="label_frag_exi_list">Выставки</string>
+    <string name="label_frag_exi_det">Выставка</string>
+    <string name="label_frag_ticket_list">Билеты</string>
+    <string name="label_frag_ticket_det">Билет</string>
+    <string name="qrscanner">QRScanner</string>
+    <string name="qr_code_url">get QR-code from poster URL</string>
+    <string name="qr_code_ticket">get QR-code from title</string>
+    <string name="get_enjoy">Get enjoy</string>
 </resources>

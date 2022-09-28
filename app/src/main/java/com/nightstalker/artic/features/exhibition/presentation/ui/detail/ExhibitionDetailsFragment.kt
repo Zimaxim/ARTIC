@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.nightstalker.artic.R
 import com.nightstalker.artic.databinding.FragmentExhibitionDetailsBinding
 import com.nightstalker.artic.features.exhibition.domain.Exhibition
 import com.nightstalker.artic.features.exhibition.presentation.ui.ExhibitionsViewModel
@@ -22,6 +25,10 @@ class ExhibitionDetailsFragment : Fragment() {
     private val exhibitionsViewModel by viewModel<ExhibitionsViewModel>()
     private lateinit var binding: FragmentExhibitionDetailsBinding
 
+// to_Ticket
+    private var buyTicketFloatingActionButton : FloatingActionButton? = null
+    private var exhibitionState : Exhibition? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,6 +41,7 @@ class ExhibitionDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setViewQRcode(view)
         val id = args.exhibitionId
         exhibitionsViewModel.getExhibition(id)
         initObserver()
@@ -44,7 +52,8 @@ class ExhibitionDetailsFragment : Fragment() {
     }
 
     private fun setViews(exhibition: Exhibition?) = with(binding) {
-        tvTitle.text = exhibition?.title.orEmpty()
+        exhibitionState = exhibition
+        titleTextView.text = exhibition?.title.orEmpty()
         tvDescription.text = exhibition?.shortDescription.orEmpty()
         tvStatus.text = exhibition?.status.orEmpty()
 
@@ -52,4 +61,15 @@ class ExhibitionDetailsFragment : Fragment() {
         val imageUrl = exhibition?.imageUrl.orEmpty()
         Glide.with(context).load(imageUrl).into(ivImage)
     }
+
+    private fun setViewQRcode(view: View) {
+        buyTicketFloatingActionButton =  view.findViewById(R.id.buyTicketFloatingActionButton)
+
+        buyTicketFloatingActionButton?.setOnClickListener {
+            ExhibitionDetailsFragmentDirections
+                .toTicketDetailsFragment(args.exhibitionId)
+                .run { findNavController().navigate(this) }
+        }
+    }
+
 }

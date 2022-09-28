@@ -103,7 +103,7 @@ data class ArtworkData(
     @SerializedName("inscriptions")
     val inscriptions: String,
     @SerializedName("internal_department_id")
-    val internalDepartmentId: Int,
+    val internalDepartmentId: Long,
     @SerializedName("is_boosted")
     val isBoosted: Boolean,
     @SerializedName("is_on_view")
@@ -141,7 +141,7 @@ data class ArtworkData(
     @SerializedName("publishing_verification_level")
     val publishingVerificationLevel: String,
     @SerializedName("section_ids")
-    val sectionIds: List<Int>,
+    val sectionIds: List<Long>,
     @SerializedName("section_titles")
     val sectionTitles: List<String>,
     @SerializedName("site_ids")

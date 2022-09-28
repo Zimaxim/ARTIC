@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.nightstalker.artic.core.utils.ImageLinkCreator
+import com.nightstalker.artic.core.utils.ImageLinkConstructor
 import com.nightstalker.artic.databinding.FragmentArtworkDetailsBinding
 import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.artwork.domain.ArtworkManifest
@@ -54,10 +54,10 @@ class ArtworkDetailsFragment : Fragment() {
 
     private fun setArtworkViews(artwork: Artwork) {
         with(binding) {
-            tvTitle.text = artwork.title
+            titleTextView.text = artwork.title
             tvAuthor.text = artwork.artist
             val context = binding.placeImage.context
-            val imageUrl = artwork.imageId?.let { ImageLinkCreator.createImageDefaultLink(it) }
+            val imageUrl = artwork.imageId?.let { ImageLinkConstructor.createImageDefaultLink(it) }
             Glide.with(context).load(imageUrl).into(placeImage)
         }
     }
