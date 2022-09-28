@@ -2,12 +2,12 @@ package com.nightstalker.artic.features.artwork.data
 
 import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.artwork.domain.ArtworkManifest
-import com.nightstalker.artic.features.artwork.domain.repo.ArtWorkRepo
+import com.nightstalker.artic.features.artwork.domain.repo.ArtworkRepo
 import com.nightstalker.artic.network.ArtworksApiMapper
 
-class ArtWorkRepoImpl(
+class ArtworkRepoImpl(
     private val apiMapper: ArtworksApiMapper
-) : ArtWorkRepo {
+) : ArtworkRepo {
     override suspend fun getArtworkById(id: Int): Artwork =
         apiMapper.getArtWorkById(id)
 

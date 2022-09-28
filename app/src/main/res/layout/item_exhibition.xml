@@ -31,23 +31,20 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_title"
+        style="@style/ListItemsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="@color/black"
-        android:textSize="32dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivArtworkImage"
         tools:text="Life and Afterlife in Ancient Egypt" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvDates"
+        style="@style/ListItemsShortDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/black"
-        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_title"
         tools:text="Now Open" />

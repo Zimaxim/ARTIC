@@ -5,10 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nightstalker.artic.R
-import com.nightstalker.artic.core.utils.ImageLinkCreator
-import com.nightstalker.artic.databinding.ItemArtworkBinding
 import com.nightstalker.artic.databinding.ItemExhibitionBinding
-import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.exhibition.domain.Exhibition
 
 /**
@@ -49,7 +46,6 @@ class ExhibitionsListAdapter(
     fun setData(data: List<Exhibition>) {
         if (data.isNotEmpty()) {
             this._data = data
-            notifyDataSetChanged()
         }
     }
 

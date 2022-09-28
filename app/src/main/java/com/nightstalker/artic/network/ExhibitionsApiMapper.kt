@@ -1,8 +1,8 @@
 package com.nightstalker.artic.network
 
 import com.nightstalker.artic.core.network.BaseApiMapper
-import com.nightstalker.artic.features.artwork.data.mappers.toExhibition
-import com.nightstalker.artic.features.artwork.data.mappers.toListOfExhibitions
+import com.nightstalker.artic.features.toExhibition
+import com.nightstalker.artic.features.toListOfExhibitions
 import com.nightstalker.artic.network.net.ArtworksApi
 import com.nightstalker.artic.network.net.ExhibitionsApi
 
