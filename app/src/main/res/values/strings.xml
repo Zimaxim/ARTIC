@@ -10,4 +10,13 @@
     <string name="qr_code_url">get QR-code from poster URL</string>
     <string name="qr_code_ticket">get QR-code from title</string>
     <string name="get_enjoy">Get enjoy</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="favourites_scanned_results">Favourite Scanned Results</string>
+    <string name="grant_permissions">Grant Permissions</string>
+    <string name="we_need_permission">We need camera permission to scan QR codes. Go to App Settings and manage
+        permissions
+    </string>
+    <string name="grant">Grant</string>
+
 </resources>

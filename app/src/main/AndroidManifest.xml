@@ -4,7 +4,7 @@
     package="com.nightstalker.artic">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".ArticApp"
@@ -17,9 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ARTIC.AmberOrange"
         tools:targetApi="31">
-
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
     </application>
 
