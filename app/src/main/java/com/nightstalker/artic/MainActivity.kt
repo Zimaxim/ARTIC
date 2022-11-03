@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.nightstalker.artic.core.local.ticket.TicketDao
 import com.nightstalker.artic.databinding.ActivityMainBinding
 import com.nightstalker.artic.features.artwork.presentation.ui.ArtworkViewModel
 import com.nightstalker.artic.features.exhibition.presentation.ui.ExhibitionsViewModel
@@ -18,14 +19,17 @@ class MainActivity : AppCompatActivity() {
     private val artworksViewModel by viewModel<ArtworkViewModel>()
     private val exhibitionsViewModel by viewModel<ExhibitionsViewModel>()
     private val ticketsViewModel by viewModel<TicketsViewModel>()
+    private lateinit var ticketDao: TicketDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val botNavView: BottomNavigationView = binding.bottomNavigation
+
 
         val navController = findNavController(R.id.navHostFragment)
         val appBarConfiguration = AppBarConfiguration(
@@ -38,9 +42,10 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         botNavView.setupWithNavController(navController)
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val controller = findNavController(R.id.navHostFragment)
-        return controller.navigateUp() ||  super.onSupportNavigateUp()
+        return controller.navigateUp() || super.onSupportNavigateUp()
     }
 
 

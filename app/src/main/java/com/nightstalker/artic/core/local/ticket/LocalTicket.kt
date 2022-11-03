@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = "ticket")
+@Entity(tableName = "tickets")
 data class LocalTicket(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

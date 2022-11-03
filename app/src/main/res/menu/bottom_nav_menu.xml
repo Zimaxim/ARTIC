@@ -14,4 +14,9 @@
         android:icon="@drawable/ic_qr_code_24"
         android:title="Сканер" />
 
+    <item
+        android:id="@+id/ticketsListFragment"
+        android:icon="@drawable/ic_shop"
+        android:title="Билеты" />
+
 </menu>

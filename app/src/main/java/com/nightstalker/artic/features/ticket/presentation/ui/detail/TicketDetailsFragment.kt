@@ -21,6 +21,8 @@ class TicketDetailsFragment: Fragment() {
     private val exhibitionsViewModel by viewModel<ExhibitionsViewModel>()
     private lateinit var binding: FragmentTicketDetailsBinding
 
+
+
     // QR-code
     private var qrCodeImageView: ImageView? = null
     private var bBuy: Button? = null

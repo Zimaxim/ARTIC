@@ -8,12 +8,12 @@ import androidx.room.RoomDatabase
 import com.nightstalker.artic.core.local.ticket.LocalTicket
 import com.nightstalker.artic.core.local.ticket.TicketDao
 
-@Database(  entities = [LocalTicket::class], version = 1, exportSchema = false,  )
+@Database(  entities = [LocalTicket::class], version = 1, exportSchema = true,  )
 //@TypeConverters( DataConversion::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract val tickets: TicketDao
-    abstract fun getTicketsDao(): TicketDao
+//    abstract fun getTicketsDao(): TicketDao
 
     companion object {
         @Volatile

@@ -9,7 +9,8 @@ import com.nightstalker.artic.core.local.ticket.LocalTicket
 import com.nightstalker.artic.features.artwork.domain.Artwork
 import com.nightstalker.artic.features.artwork.domain.ArtworkManifest
 import com.nightstalker.artic.features.exhibition.domain.Exhibition
-import com.nightstalker.artic.features.ticket.domain.Ticket
+import com.nightstalker.artic.features.ticket.domain.TicketUseCase
+
 
 /**
  * Функции для преобразования данных из дата слоя в домайн
@@ -51,8 +52,8 @@ fun List<ExhibitionData>.toListOfExhibitions(): List<Exhibition> =
         )
     }
 
-fun LocalTicket.toTicket(): Ticket =
-    Ticket(
+fun LocalTicket.toTicketUseCase():  TicketUseCase =
+    TicketUseCase(
         id = id,
         title = title,
         exhibitionId = exhibitionId,
@@ -65,9 +66,9 @@ fun LocalTicket.toTicket(): Ticket =
         timestamp = timestamp,
     )
 
-fun List<LocalTicket>.toListOfTickets(): List<Ticket> =
+fun List<LocalTicket>.toListOfTicketUseCase(): List<TicketUseCase> =
     map {
-        Ticket(
+        TicketUseCase(
             id = it.id,
             title = it.title,
             exhibitionId = it.exhibitionId,

@@ -2,8 +2,10 @@ package com.nightstalker.artic
 
 import android.app.Application
 import com.nightstalker.artic.features.artwork.di.artworkModules
+import com.nightstalker.artic.features.di.daoModule
 import com.nightstalker.artic.features.di.databaseModule
 import com.nightstalker.artic.features.di.networkModule
+import com.nightstalker.artic.features.di.repositoryModule
 import com.nightstalker.artic.features.exhibition.di.exhibitionModules
 import com.nightstalker.artic.features.ticket.di.ticketModules
 import org.koin.android.ext.koin.androidContext
@@ -24,6 +26,8 @@ class ArticApp: Application() {
             modules(artworkModules)
             modules(exhibitionModules)
             modules(networkModule)
+            modules(repositoryModule)
+            modules(daoModule)
             modules(databaseModule)
             modules(ticketModules)
         }

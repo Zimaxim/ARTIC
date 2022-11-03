@@ -16,7 +16,8 @@ package com.nightstalker.artic.features.ticket.domain
  *
  * @author Maxim Zimin
  */
-data class Ticket(
+
+data class TicketUseCase(
     val id: Long = 0L,
     val title: String = "",
     val exhibitionId: String = "",

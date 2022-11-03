@@ -3,12 +3,11 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'com.google.devtools.ksp' version '1.6.21-1.0.6'
 
 }
-
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
 
 
 android {
@@ -19,6 +18,14 @@ android {
     compileSdk 32
 
     defaultConfig {
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
+
+
         applicationId "com.nightstalker.artic"
         minSdk 21
         targetSdk 32
@@ -43,19 +50,52 @@ android {
     }
 }
 
-configurations {
-    cleanedAnnotations
-    implementation.exclude group: 'org.jetbrains' , module:'annotations'
+//configurations {
+//    cleanedAnnotations
+//    implementation.exclude group: 'org.jetbrains' , module:'annotations'
+//}
+
+kapt {
+    correctErrorTypes = true
 }
 
 dependencies {
 
-    implementation 'androidx.room:room-common:2.4.3'
-    annotationProcessor 'androidx.room:room-compiler:2.4.3'
-//    kapt 'androidx.room:room-compiler:2.4.3'
-    implementation 'androidx.room:room-ktx:2.4.3'
+//    implementation 'com.google.devtools.ksp:symbol-processing-gradle-plugin:1.7.10-1.0.7'
+
     def nav_version = "2.5.0"
-    def room_version = ""
+//    def room_version = "2.4.3"
+
+//    def room_version = "2.4.3"
+//    implementation "androidx.room:room-runtime:$room_version"
+////    annotationProcessor "androidx.room:room-compiler:$room_version"
+//    ksp "android.arch.persistence.room:compiler:1.1.1"
+
+//    def room_version = "2.3.0"
+    def room_version = "2.4.3"
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+
+
+//    ksp("androidx.room:room-compiler:$room_version")
+//    kapt "androidx.room:room-compiler:$room_version"
+//    implementation "androidx.room:room-ktx:$room_version"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
+
+//    implementation("androidx.room:room-runtime:$room_version")
+////    annotationProcessor("androidx.room:room-compiler:$room_version")
+//    // To use Kotlin annotation processing tool (kapt)
+////    kapt("androidx.room:room-compiler:$room_version")
+//    // To use Kotlin Symbol Processing (KSP)
+//    ksp("androidx.room:room-compiler:$room_version")
+//    // optional - Kotlin Extensions and Coroutines support for Room
+////    implementation("androidx.room:room-ktx:$room_version")
+
+
 
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2'
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2'
