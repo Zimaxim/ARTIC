@@ -32,22 +32,7 @@ class TicketsViewModel(private val repo: TicketsRepo)  : ViewModel() {
         viewModelScope.launch {
             _ticketsLoaded.postValue(
                 repo.getTickets()?: listOf(TicketUseCase())
-//                 listOf(
-//                    TicketUseCase(id=-1L,
-//                        title = "ARCTIC",
-//                        exhibitionId = "123",
-//                        galleryId = 3,
-//                        galleryTitle = "First",
-//                        timestamp = 10000L
-//                    ),
-//                     TicketUseCase(id=-2L,
-//                     title = "ARCTIC-2",
-//                     exhibitionId = "1234",
-//                     galleryId = 4,
-//                     galleryTitle = "Second",
-//                     timestamp = 10000L
-//                 )
-//                 )
+
             )
         }
     }

@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 import com.nightstalker.artic.core.local.ticket.LocalTicket
 import com.nightstalker.artic.core.local.ticket.TicketDao
 
-@Database(  entities = [LocalTicket::class], version = 1, exportSchema = true,  )
+@Database(  entities = [LocalTicket::class], version = 1, exportSchema = false,  )
 //@TypeConverters( DataConversion::class)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -19,7 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
         @Volatile
         private var instance: AppDatabase? = null
 
-        private const val databaseName = "artic.db"
+        private const val databaseName = "artic"
         const val ARTIC_TABLE = "ARTIC_TABLE"
 
         fun getInstance(context: Context): AppDatabase {
