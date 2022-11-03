@@ -2,7 +2,6 @@ package com.nightstalker.artic
 
 import android.app.Application
 import com.nightstalker.artic.features.artwork.di.artworkModules
-import com.nightstalker.artic.features.di.daoModule
 import com.nightstalker.artic.features.di.databaseModule
 import com.nightstalker.artic.features.di.networkModule
 import com.nightstalker.artic.features.di.repositoryModule
@@ -12,7 +11,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 
-class ArticApp: Application() {
+class ArticApp : Application() {
 //    private val database by lazy {
 //        AppDatabase.getInstance(this@ArticApp)
 //    }
@@ -27,15 +26,15 @@ class ArticApp: Application() {
             modules(exhibitionModules)
             modules(networkModule)
             modules(repositoryModule)
-            modules(daoModule)
             modules(databaseModule)
             modules(ticketModules)
         }
     }
+
     override fun onTerminate() {
         super.onTerminate()
         stopKoin()
     }
-    
+
 
 }

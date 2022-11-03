@@ -2,6 +2,7 @@ package com.nightstalker.artic
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -12,6 +13,9 @@ import com.nightstalker.artic.databinding.ActivityMainBinding
 import com.nightstalker.artic.features.artwork.presentation.ui.ArtworkViewModel
 import com.nightstalker.artic.features.exhibition.presentation.ui.ExhibitionsViewModel
 import com.nightstalker.artic.features.ticket.presentation.ui.TicketsViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     private val exhibitionsViewModel by viewModel<ExhibitionsViewModel>()
     private val ticketsViewModel by viewModel<TicketsViewModel>()
     private lateinit var ticketDao: TicketDao
+
+    private val dao: TicketDao by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +36,12 @@ class MainActivity : AppCompatActivity() {
 
         val botNavView: BottomNavigationView = binding.bottomNavigation
 
+        //TODO: REMOVE IT ------
+        lifecycleScope.launch(Dispatchers.IO) {
+            val tickets = dao.getTickets()
+            tickets.toString()
+        }
+        //TODO: ------
 
         val navController = findNavController(R.id.navHostFragment)
         val appBarConfiguration = AppBarConfiguration(
@@ -47,7 +59,6 @@ class MainActivity : AppCompatActivity() {
         val controller = findNavController(R.id.navHostFragment)
         return controller.navigateUp() || super.onSupportNavigateUp()
     }
-
 
 
 }

@@ -5,17 +5,16 @@ import com.nightstalker.artic.core.local.database.AppDatabase
 import com.nightstalker.artic.features.ticket.domain.TicketUseCase
 
 
-class TicketStore(database: AppDatabase) {
-    private val localTickets = database.tickets
+class TicketStore(val dao: TicketDao) {
 
-    suspend fun all(): List<LocalTicket> =  localTickets.getTickets()
-    fun all(term: String): List<LocalTicket> = localTickets.searchAll(term)
-    fun findById(id: Long): LocalTicket = localTickets.findById(id)
+    suspend fun all(): List<LocalTicket> =  dao.getTickets()
+    fun all(term: String): List<LocalTicket> = dao.searchAll(term)
+    fun findById(id: Long): LocalTicket = dao.findById(id)
 
     suspend fun save(tickets: List<TicketUseCase>) {
         Log.d("Ticket_save"," 1 size =  ${tickets.size}")
         tickets.forEach{
-            this.localTickets.insert( it.toLocal())
+            dao.insert( it.toLocal())
         }
         Log.d("Ticket_save"," 2 size =  ${tickets.size}")
     }

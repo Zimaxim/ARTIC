@@ -12,27 +12,27 @@ import com.nightstalker.artic.core.local.ticket.TicketDao
 //@TypeConverters( DataConversion::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract val tickets: TicketDao
-//    abstract fun getTicketsDao(): TicketDao
+//    abstract val tickets: TicketDao
+    abstract fun getTicketsDao(): TicketDao
 
-    companion object {
-        @Volatile
-        private var instance: AppDatabase? = null
-
-        private const val databaseName = "artic"
-        const val ARTIC_TABLE = "ARTIC_TABLE"
-
-        fun getInstance(context: Context): AppDatabase {
-            Log.d("Artic-Database","Step #1 Artic-Database was created")
-            if (instance == null) {
-                synchronized(this) {
-                    Log.d(ARTIC_TABLE,"Start!!! Artic-Database")
-                    instance = createDatabaseInstance(context)
-                }
-            }
-            Log.d("Artic-Database","Step #2 Artic-Database was created")
-            return instance!!
-        }
+//    companion object {
+//        @Volatile
+//        private var instance: AppDatabase? = null
+//
+//        private const val databaseName = "artic"
+//        const val ARTIC_TABLE = "ARTIC_TABLE"
+//
+//        fun getInstance(context: Context): AppDatabase {
+//            Log.d("Artic-Database","Step #1 Artic-Database was created")
+//            if (instance == null) {
+//                synchronized(this) {
+//                    Log.d(ARTIC_TABLE,"Start!!! Artic-Database")
+//                    instance = createDatabaseInstance(context)
+//                }
+//            }
+//            Log.d("Artic-Database","Step #2 Artic-Database was created")
+//            return instance!!
+//        }
 
 //        fun getInstance(context: Context): AppDatabase {
 //            synchronized(this) {
@@ -47,19 +47,16 @@ abstract class AppDatabase : RoomDatabase() {
 //                }
 //            },
 //        )
-
-        private fun createDatabaseInstance(context: Context): AppDatabase {
-            return Room
-                .databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    databaseName
-                )
-                .fallbackToDestructiveMigration()
-                .build()
-        }
-    }
-
-
-
+//
+//        private fun createDatabaseInstance(context: Context): AppDatabase {
+//            return Room
+//                .databaseBuilder(
+//                    context.applicationContext,
+//                    AppDatabase::class.java,
+//                    databaseName
+//                )
+//                .fallbackToDestructiveMigration()
+//                .build()
+//        }
+//    }
 }
